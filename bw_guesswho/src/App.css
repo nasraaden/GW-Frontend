@@ -8,3 +8,6 @@ body {
 a {
     color: white;
 }
+button {
+    border: 5px solid green;
+}
