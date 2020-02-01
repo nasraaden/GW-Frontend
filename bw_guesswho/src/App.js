@@ -5,6 +5,8 @@ import {Route, Switch} from 'react-router-dom';
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import PrivateRoute from './components/PrivateRoute';
+import HomePage from './components/home-page/HomePage';
 
 const H1 = styled.h1`
     color: white;
@@ -25,6 +27,7 @@ function App() {
   return (
     <Div className="App">
         <Switch>  
+            <PrivateRoute exact path="/home-page" component={HomePage} />
             <Route path='/create-account' render={props => <SignUp {...props} />} />
             <Route path='/' render={(props)=><Login {...props} />}/>
         </Switch>
