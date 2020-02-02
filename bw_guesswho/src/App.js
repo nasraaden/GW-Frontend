@@ -2,7 +2,7 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 import './styles/App.css';
-import { H1, AppDiv} from './styles/Styles';
+import {AppDiv} from './styles/Styles';
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
