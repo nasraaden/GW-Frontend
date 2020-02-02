@@ -17,23 +17,30 @@ const validationSchema = yup.object().shape({
     .max(20, 'Password exceeds character limit.')
 });
 
+const initialState = {
+    email: '',
+    password: ''
+}
 
-export default function Login() {
+function loginReducer(state, action) {
+    return state;
+}
+
+export default function Login(props) {
     const {register, handleSubmit, errors} = useForm({validationSchema: validationSchema});
-    const [ state, setState ] = useReducer((state, newState) => ({...state, newState}), {
-        email: '1234@gmail.com',
-        password: '1234'
-    });
+    const [ state, dispatch ] = useReducer(loginReducer, initialState );
 
 // email: 1234@gmail.com    password: 1234
-    const onSubmit = e => {
+    const onSubmit = data => {
+        dispatch(state.email = data.email, state.password = data.password);
+        console.log('state', state, 'data', data);
         // e.preventDefault();
 		axios
         .post('http://localhost:5000/api/login', state)
         .then((res) => {
-            console.log('TOKEN:', res);
+            console.log('TOKEN:', res.data.payload);
             // localStorage.setItem('token', res.data.payload);
-            // this.props.history.push('/bubble-page');
+            props.history.push('/home-page');
         })
         .catch((err) => console.log(err));
         document.getElementById('form').reset();
