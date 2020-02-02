@@ -18,10 +18,10 @@ export default function ErrorMessagesSU(props) {
         <>
          {(props.errors.name !== undefined || props.errors.email !== undefined || props.errors.password !== undefined || props.errors.passwordConfirm !== undefined) &&(
              <>
-                <StyledP><Label>{(props.errors.name !== undefined)?(Object.values(props.errors.name)[0]):(null)}</Label></StyledP>
-                <StyledP><Label>{(props.errors.email !== undefined)?(Object.values(props.errors.email)[0]):(null)}</Label></StyledP>
-                <StyledP><Label>{(props.errors.password !== undefined)?(Object.values(props.errors.password)[0]):(null)}</Label></StyledP>
-                <StyledP><Label>{(props.errors.passwordConfirm !== undefined)?(Object.values(props.errors.passwordConfirm)[0]):(null)}</Label></StyledP>
+                <StyledP><Label>{(props.errors.name !== undefined)?(props.errors.name.message):(null)}</Label></StyledP>
+                <StyledP><Label>{(props.errors.email !== undefined)?(props.errors.email.message):(null)}</Label></StyledP>
+                <StyledP><Label>{(props.errors.password !== undefined)?(props.errors.password.message):(null)}</Label></StyledP>
+                <StyledP><Label>{(props.errors.passwordConfirm !== undefined)?(props.errors.passwordConfirm.message):(null)}</Label></StyledP>
              </>
          )}
         </>

@@ -12,3 +12,8 @@ a {
 button {
     border: 5px solid green;
 }
+.backButton a {
+    text-decoration: none;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 40px;
+}

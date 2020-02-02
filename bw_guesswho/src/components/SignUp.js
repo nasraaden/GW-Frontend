@@ -99,6 +99,19 @@ const Div2 = styled.div`
 const StyledP = styled.p`
     margin: 0;
 `
+const Span3 = styled.span`
+    color: white;
+    position: absolute;
+    left: 2%;
+    top: 5%;
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: 100;
+`
+const Img = styled.img`
+    height: 40px;
+    width: 40px;
+`
 
 function equalTo(ref: any, msg: any) {
     return yup.mixed().test({
@@ -141,6 +154,7 @@ export default function SignUp() {
         return (
             <Form id='form' onSubmit={handleSubmit(onSubmit)}>
                 <StyledDiv>
+                    <Span3 className='backButton'><NavLink to='/'>{`<`}</NavLink></Span3>
                     <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
                     <H2>Create your account</H2>
                     <StyledDiv2>

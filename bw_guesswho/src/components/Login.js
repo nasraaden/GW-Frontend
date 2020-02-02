@@ -4,6 +4,8 @@ import * as yup from 'yup';
 import {useForm} from 'react-hook-form';
 import {NavLink} from 'react-router-dom';
 
+import ErrorMessagesLI from './ErrorMessagesLI';
+
 const Form = styled.form`
     display: flex;
     flex-direction: column;
@@ -96,6 +98,7 @@ const Div2 = styled.div`
 const validationSchema = yup.object().shape({
     email: yup
     .string().required('Enter an email.')
+    .email('Enter an email')
     .min(3,'You need a longer email.')
     .max(36, 'Your email is too long.'),
     password: yup
@@ -116,7 +119,7 @@ export default function Login() {
                     <StyledDiv2>
                         <Div>
                             <Label htmlFor='email'>Email</Label>
-                            <Input name='email' type='email' ref={register} />
+                            <Input name='email' type='text' ref={register} />
                         </Div>
                         <Div>
                             <Label htmlFor='name'>Password</Label>
@@ -124,22 +127,7 @@ export default function Login() {
                         </Div>
                     </StyledDiv2>
                     <Div>
-                        <pre>
-                            { errors.email !== undefined && errors.password !== undefined && (
-                                <>
-                                    <p><Label>{Object.values(errors.email)[0]}</Label></p>
-                                    <p><Label>{Object.values(errors.password)[0]}</Label></p>
-                                </>
-                            )|| errors.password !== undefined && (
-                                <>
-                                    <p><Label>{Object.values(errors.password)[0]}</Label></p>
-                                </>
-                            )|| errors.email !== undefined && (
-                                <>
-                                    <p><Label>{Object.values(errors.email)[0]}</Label></p>
-                                </>
-                            )}
-                        </pre>
+                        <ErrorMessagesLI errors={errors}/>
                     </Div>
                     <Button type='submit'>Sign In</Button>
                     <P>Don't have an account? <NavLink to='/create-account'>Create Account</NavLink> </P>
