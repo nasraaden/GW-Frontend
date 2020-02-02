@@ -1,5 +1,22 @@
 import styled from "styled-components";
 
+/* App.js Styling */
+export const H1 = styled.h1`
+    color: white;
+    font-size: 24px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 900;
+`
+export const AppDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 100vw;
+`
+
+/* Sign Up and Login styles below */
 export const Form = styled.form`
 display: flex;
 flex-direction: column;

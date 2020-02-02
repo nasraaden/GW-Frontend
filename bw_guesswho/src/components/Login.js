@@ -1,6 +1,7 @@
-import React, {useState} from 'react';
+import React, { useState, useReducer } from 'react';
 import { Form, Input, Button, Label, Div, StyledDiv, StyledDiv2, H2, P, Span1, Span2, Div2 } from '../styles/Styles';
 import * as yup from 'yup';
+import axios from 'axios';
 import {useForm} from 'react-hook-form';
 import {NavLink} from 'react-router-dom';
 
@@ -12,14 +13,32 @@ const validationSchema = yup.object().shape({
     .max(36, 'Your email is too long.'),
     password: yup
     .string().required('Enter a password.')
-    .min(6, 'Password is too short.')
-    .max(16, 'Password exceeds character limit.')
+    .min(4, 'Password is too short.')
+    .max(20, 'Password exceeds character limit.')
 });
 
 
 export default function Login() {
     const {register, handleSubmit, errors} = useForm({validationSchema: validationSchema});
-    const onSubmit = () => {document.getElementById('form').reset()};
+    const [ state, setState ] = useReducer((state, newState) => ({...state, newState}), {
+        email: '1234@gmail.com',
+        password: '1234'
+    });
+
+// email: 1234@gmail.com    password: 1234
+    const onSubmit = e => {
+        // e.preventDefault();
+		axios
+        .post('http://localhost:5000/api/login', state)
+        .then((res) => {
+            console.log('TOKEN:', res);
+            // localStorage.setItem('token', res.data.payload);
+            // this.props.history.push('/bubble-page');
+        })
+        .catch((err) => console.log(err));
+        document.getElementById('form').reset();
+    }
+
     return (
             <Form id='form' onSubmit={handleSubmit(onSubmit)}>
                 <StyledDiv>
