@@ -4,10 +4,13 @@ import * as yup from 'yup';
 import {useForm} from 'react-hook-form';
 import {NavLink} from 'react-router-dom';
 
+import ErrorMessagesSU from './ErrorMessagesSU';
+
 const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 `
 const Input = styled.input`
     width: 100%;
@@ -68,6 +71,7 @@ const StyledDiv2 = styled.div`
 const H2 = styled.h2`
     font-size: 20px;
     color: white;
+    margin-top: 32%;
     margin-bottom: 25%;
 `
 const P = styled.p`
@@ -92,6 +96,9 @@ const Div2 = styled.div`
     position: absolute;
     top: 5%;
 `
+const StyledP = styled.p`
+    margin: 0;
+`
 
 function equalTo(ref: any, msg: any) {
     return yup.mixed().test({
@@ -109,8 +116,13 @@ function equalTo(ref: any, msg: any) {
     yup.addMethod(yup.string, 'equalTo', equalTo);
     
 const validationSchema = yup.object().shape({
+    name: yup
+    .string().required('Enter a name.')
+    .min(3, 'You need a longer name.')
+    .max(16, 'Name is too long.'),
     email: yup
     .string().required('Enter an email.')
+    .email('Enter an email.')
     .min(3,'You need a longer email.')
     .max(36, 'Your email is too long.'),
     password: yup
@@ -118,7 +130,7 @@ const validationSchema = yup.object().shape({
     .min(6, 'Password is too short.')
     .max(16, 'Password exceeds character limit.'),
     passwordConfirm: yup.string()
-    .equalTo(yup.ref('password'), 'Passwords must match')
+    .equalTo(yup.ref('password'), 'Passwords must match.')
 });
 
 
@@ -138,7 +150,7 @@ export default function SignUp() {
                         </Div>
                         <Div>
                             <Label htmlFor='email'>Email</Label>
-                            <Input name='email' type='email' ref={register} />
+                            <Input name='email' type='text' ref={register} />
                         </Div>
                         <Div>
                             <Label htmlFor='name'>Password</Label>
@@ -150,23 +162,10 @@ export default function SignUp() {
                         </Div>
                     </StyledDiv2>
                     <Div>
-                            { errors.email !== undefined && errors.password !== undefined && errors.confirmPassword !== undefined &&(
-                                <>
-                                    <p><Label>{Object.values(errors.email)[0]}</Label></p>
-                                    <p><Label>{Object.values(errors.password)[0]}</Label></p>
-                                    <p><Label>{Object.values(errors.passwordConfirm)[0]}</Label></p>
-                                </>
-                            )|| errors.password !== undefined && (
-                                <>
-                                    <p><Label>{Object.values(errors.password)[0]}</Label></p>
-                                </>
-                            )|| errors.email !== undefined && (
-                                <>
-                                    <p><Label>{Object.values(errors.email)[0]}</Label></p>
-                                </>
-                            )}
+                        <ErrorMessagesSU errors={errors}/>
                     </Div>
                     <Button id='submit' type='submit'>Sign Up</Button>
+                    <P>Already have an account? <NavLink to='/'>Log In</NavLink></P>
                 </StyledDiv>
         </Form>
     )
