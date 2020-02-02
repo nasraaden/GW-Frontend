@@ -1,34 +1,23 @@
 import React from 'react';
-import './App.css';
-import styled from 'styled-components';
 import {Route, Switch} from 'react-router-dom';
+
+import './styles/App.css';
+import { H1, AppDiv} from './styles/Styles';
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-
-const H1 = styled.h1`
-    color: white;
-    font-size: 24px;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 900;
-`
-const Div = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    max-width: 100vw;
-`
+import PrivateRoute from './components/PrivateRoute';
+import HomePage from './components/home-page/HomePage';
 
 function App() {
   return (
-    <Div className="App">
+    <AppDiv className="App">
         <Switch>  
+            <PrivateRoute exact path="/home-page" component={HomePage} />
             <Route path='/create-account' render={props => <SignUp {...props} />} />
             <Route path='/' render={(props)=><Login {...props} />}/>
         </Switch>
-    </Div>
+    </AppDiv>
     
   );
 }
