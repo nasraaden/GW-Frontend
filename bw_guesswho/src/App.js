@@ -2,13 +2,20 @@ import React from 'react';
 import {Route, Switch} from 'react-router-dom';
 
 import './styles/App.css';
+<<<<<<< HEAD
 import { H1, AppDiv} from './styles/Styles';
+=======
+import {AppDiv} from './styles/Styles';
+>>>>>>> origin/thomas-shottsjr
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import PrivateRoute from './components/PrivateRoute';
 import HomePage from './components/home-page/HomePage';
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/thomas-shottsjr
 function App() {
   return (
     <AppDiv className="App">
