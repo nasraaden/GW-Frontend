@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import { Form, Input, Button, Label, Div, StyledDiv, StyledDiv2, H2, P, Span1, Span2, Div2 } from '../styles/Styles';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -31,6 +31,7 @@ function loginReducer(state, action) {
 }
 
 export default function Login(props) {
+<<<<<<< HEAD
 	const { register, handleSubmit, errors } = useForm({ validationSchema: validationSchema });
 	const [ state, dispatch ] = useReducer(loginReducer, initialState);
 
@@ -39,6 +40,17 @@ export default function Login(props) {
 		dispatch((state.email = data.email), (state.password = data.password));
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
+=======
+    
+    const {register, handleSubmit, errors} = useForm({validationSchema: validationSchema});
+    const [ state, dispatch ] = useReducer(loginReducer, initialState );
+   
+// email: 1234@gmail.com    password: 1234
+    const onSubmit = data => {
+        dispatch(state.email = data.email, state.password = data.password);
+        console.log('state', state, 'data', data);
+        // e.preventDefault();
+>>>>>>> origin/thomas-shottsjr
 		axios
 			.post('http://localhost:5000/api/login', state)
 			.then((res) => {
@@ -50,6 +62,7 @@ export default function Login(props) {
 		document.getElementById('form').reset();
 	};
 
+<<<<<<< HEAD
 	return (
 		<Form id="form" onSubmit={handleSubmit(onSubmit)}>
 			<StyledDiv>
@@ -79,3 +92,29 @@ export default function Login(props) {
 		</Form>
 	);
 }
+=======
+    return (
+            <Form id='form' onSubmit={handleSubmit(onSubmit)} >
+                <StyledDiv>
+                    <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
+                    <H2>Sign In</H2>
+                    <StyledDiv2>
+                        <Div>
+                            <Label htmlFor='email'>Email</Label>
+                            <Input name='email' type='text' ref={register} />
+                        </Div>
+                        <Div>
+                            <Label htmlFor='name'>Password</Label>
+                            <Input name='password' type='password' ref={register} />
+                        </Div>
+                    </StyledDiv2>
+                    <Div>
+                        <ErrorMessagesLI errors={errors}/>
+                    </Div>
+                    <Button type='submit'>Sign In</Button>
+                    <P>Don't have an account? <NavLink to='/create-account'>Create Account</NavLink> </P>
+                </StyledDiv>
+        </Form>
+    )
+}
+>>>>>>> origin/thomas-shottsjr
