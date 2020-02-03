@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import { Form, Input, Button, Label, Div, StyledDiv, StyledDiv2, H2, P, Span1, Span2, Div2 } from '../styles/Styles';
 import * as yup from 'yup';
 import axios from 'axios';
@@ -30,9 +30,10 @@ function loginReducer(state, action) {
 }
 
 export default function Login(props) {
+    
     const {register, handleSubmit, errors} = useForm({validationSchema: validationSchema});
     const [ state, dispatch ] = useReducer(loginReducer, initialState );
-
+   
 // email: 1234@gmail.com    password: 1234
     const onSubmit = data => {
         dispatch(state.email = data.email, state.password = data.password);
@@ -50,7 +51,7 @@ export default function Login(props) {
     }
 
     return (
-            <Form id='form' onSubmit={handleSubmit(onSubmit)}>
+            <Form id='form' onSubmit={handleSubmit(onSubmit)} >
                 <StyledDiv>
                     <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
                     <H2>Sign In</H2>
