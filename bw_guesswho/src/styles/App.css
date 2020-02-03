@@ -1,19 +1,19 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 body {
-    background-image: url('https://i.imgur.com/tAgIpFC.png');
-    font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+	background-image: url('https://i.imgur.com/tAgIpFC.png');
+	font-family: 'Roboto', sans-serif;
+	overflow-x: hidden;
 }
 a {
-    color: white;
+	color: white;
 }
 button {
-    border: 5px solid green;
+	border: 5px solid green;
 }
 .backButton a {
-    text-decoration: none;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 40px;
+	text-decoration: none;
+	font-family: 'Nanum Myeongjo', serif;
+	font-size: 40px;
 }
