@@ -99,6 +99,11 @@ font-family: 'Roboto', sans-serif;
 color: white;
 font-size: 20px;
 `
+export const Span3 = styled.div`
+    position: absolute;
+    left: 5%;
+    top: 10%;
+`
 export const Div2 = styled.div`
 display: flex;
 align-items: baseline;
