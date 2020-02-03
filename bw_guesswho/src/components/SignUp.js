@@ -5,7 +5,7 @@ import {useForm} from 'react-hook-form';
 import {NavLink} from 'react-router-dom';
 
 import ErrorMessagesSU from './ErrorMessagesSU';
-import {Form, StyledDiv, Span3, Span2, Button, Div2, Span1, H2, StyledDiv2, Div, Label, Input, P} from '../styles/Styles';
+import {Form, StyledDiv, Span2, Span3, Div2, Span1, H2, StyledDiv2, Div, Label, Input, Button, P} from '../styles/Styles';
 
 function equalTo(ref: any, msg: any) {
     return yup.mixed().test({

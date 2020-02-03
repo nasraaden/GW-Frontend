@@ -13,7 +13,15 @@ button {
 	border: 5px solid green;
 }
 .backButton a {
-	text-decoration: none;
-	font-family: 'Nanum Myeongjo', serif;
-	font-size: 40px;
+    text-decoration: none;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 40px;
+}
+.menudiv .hidden {
+    display: none;
+}
+.menudiv a {
+    text-decoration: none;
+    color: #1B9BEA;
+    padding: 10% 0;
 }
