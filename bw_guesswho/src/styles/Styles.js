@@ -138,3 +138,63 @@ export const ShowingDiv = styled.div`
     padding: 2% 5%;
     border-radius: 5px;
 `
+//HomePage styles
+export const LongButton = styled.button`
+	width: 55%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	color: white;
+	box-shadow: none;
+	border: none;
+	position: relative;
+	margin: 1% 0;
+	background-color: white;
+	color: #1b9bea;
+	:disabled {
+		background-color: #aab8c2;
+		color: white;
+	}
+`
+export const StyledButton = styled.button`
+	width: 50%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	color: white;
+	box-shadow: none;
+	border: none;
+	position: relative;
+	margin: 1% 0;
+	background-color: white;
+	color: #1b9bea;
+	:disabled {
+		background-color: #aab8c2;
+		color: white;
+	}
+	border-right: none
+	border-left: 1px solid;
+	border-top: none;
+	border-bottom: none;
+`
+export const StyledButton2 = styled.button`
+	width: 50%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	color: white;
+	box-shadow: none;
+	border: none;
+	position: relative;
+	margin: 0;
+	background-color: white;
+	color: #1b9bea;
+	border-right: 1px solid;
+	border-left: none;
+	border-top: none;
+	border-bottom: none;
+	:disabled {
+		background-color: #aab8c2;
+		color: white;
+	}
+`

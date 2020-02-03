@@ -1,9 +1,33 @@
 import React from 'react';
+import { axiosWithAuth } from '../../utils/axiosWithAuth';
+import {NavLink, Route} from 'react-router-dom';
 
-const HomePage = () => {
+import Menu from '../Nav/Menu';
+import Game from './game/Game';
+import PrivateRoute from '../PrivateRoute';
+import {Button, LongButton, P, StyledButton, StyledButton2} from '../../styles/Styles';
+
+const HomePage = props => {
+
     return(
-        <h1>Hi from HomePage.js</h1>
-    );
-}
+        <div>
+            <Menu />
+            <form>
+                <P>Choose Game Mode</P>
+                <div>
+                    <StyledButton selected type='radio' name="singlePlayer">Single Player</StyledButton>
+                    <StyledButton2 disabled type='radio' name="multiPlayer">MultiPlayer</StyledButton2>
+                </div>    
+                <P>Choose Tweeters</P>
+                <div>
+                    <LongButton selected type='radio'>Presidential Candidates</LongButton>
+                    <LongButton type='radio' disabled>Movie Stars</LongButton>
+                    <LongButton type='radio' disabled>Athletes</LongButton>
+                </div>
 
-export default HomePage;
+                <NavLink to='/game'><Button>Play!</Button></NavLink>
+                </form>
+            </div>
+)
+}
+export default HomePage
