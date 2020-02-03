@@ -105,3 +105,19 @@ align-items: baseline;
 position: absolute;
 top: 5%;
 `
+// Menu styling
+export const MenuDiv = styled.div`
+    position: fixed;
+    left: 85%;
+    top: 10%;
+`
+export const ShowingDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 65%;
+    top: 14%;
+    background-color: #FFFFFF;
+    padding: 2% 5%;
+    border-radius: 5px;
+`
