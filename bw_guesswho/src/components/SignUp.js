@@ -20,7 +20,7 @@ import { NavLink } from 'react-router-dom';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import ErrorMessagesSU from './ErrorMessagesSU';
 
-function equalTo(ref: any, msg: any) {
+function equalTo(ref, msg) {
 	return yup.mixed().test({
 		name: 'equalTo',
 		exclusive: false,
@@ -28,7 +28,7 @@ function equalTo(ref: any, msg: any) {
 		params: {
 			reference: ref.path
 		},
-		test: function(value: any) {
+		test: function(value) {
 			return value === this.resolve(ref);
 		}
 	});

@@ -99,24 +99,42 @@ export const Span2 = styled.span`
 	color: white;
 	font-size: 20px;
 `;
-export const Span3 = styled.span`
-	color: white;
-	position: absolute;
-	left: 2%;
-	top: 5%;
-	text-decoration: none;
-	font-size: 50px;
-	font-weight: 100;
-`;
-export const Div2 = styled.div`
-	display: flex;
-	align-items: baseline;
-	position: absolute;
-	top: 5%;
-`;
+
 export const StyledP = styled.p`margin: 0;`;
 
 export const Img = styled.img`
 	height: 40px;
 	width: 40px;
+
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	font-size: 20px;
+`
+export const Span3 = styled.span`
+    position: absolute;
+    top: 5%;
+    left: 5%;
+`
+export const Div2 = styled.div`
+display: flex;
+align-items: baseline;
+position: absolute;
+top: 5%;
 `;
+
+// Menu styling
+export const MenuDiv = styled.div`
+    position: fixed;
+    left: 85%;
+    top: 10%;
+`
+export const ShowingDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 65%;
+    top: 14%;
+    background-color: #FFFFFF;
+    padding: 2% 5%;
+    border-radius: 5px;
+`
