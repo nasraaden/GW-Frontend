@@ -9,6 +9,7 @@ import SignUp from './components/SignUp';
 import PrivateRoute from './components/PrivateRoute';
 import HomePage from './components/home-page/HomePage';
 import Menu from './components/Nav/Menu';
+
 function App() {
   return (
     <AppDiv className="App">
