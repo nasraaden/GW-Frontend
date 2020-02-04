@@ -41,7 +41,7 @@ const validationSchema = yup.object().shape({
     // .email('Must be in the form of an email.')
     .required('Enter an email.')
     .min(3, 'You need a longer email.')
-    .max(16, 'Email is too long.'),
+    .max(36, 'Email is too long.'),
     password: yup
     .string().required('Enter a password.')
     .min(6, 'Password is too short.')

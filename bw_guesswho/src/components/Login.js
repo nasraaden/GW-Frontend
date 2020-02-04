@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react';
 import { Form, Input, Button, Label, Div, StyledDiv, StyledDiv2, H2, P, Span1, Span2, Div2 } from '../styles/Styles';
 import * as yup from 'yup';
-import axios from 'axios';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
