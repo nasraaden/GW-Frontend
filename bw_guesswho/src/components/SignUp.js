@@ -45,16 +45,17 @@ const validationSchema = yup.object().shape({
     password: yup
     .string().required('Enter a password.')
     .min(6, 'Password is too short.')
-    .max(16, 'Password exceeds character limit.'),
-    passwordConfirm: yup.string()
-    .equalTo(yup.ref('password'), 'Passwords must match.')
+    .max(16, 'Password exceeds character limit.')
+    ,
+    // passwordConfirm: yup.string()
+    // .equalTo(yup.ref('password'), 'Passwords must match.')
 });
 
 const initialState = {
 	name: '',
 	email: '',
 	password: '',
-	confirmPassword: ''
+	// confirmPassword: ''
 };
 
 function loginReducer(state, action) {
@@ -96,10 +97,10 @@ export default function SignUp(props) {
                             <Label htmlFor='password'>Password</Label>
                             <Input name='password' type='password' ref={register} />
                         </Div>
-                        <Div>
+                        {/* <Div>
                             <Label htmlFor='passwordConfirm'>Confirm Password</Label>
                             <Input name='passwordConfirm' type='password' ref={register} />
-                        </Div>
+                        </Div> */}
                     </StyledDiv2>
                     <Div>
                         <ErrorMessagesSU errors={errors}/>
