@@ -23,15 +23,10 @@ function equalTo(ref: any, msg: any) {
     yup.addMethod(yup.string, 'equalTo', equalTo);
     
 const validationSchema = yup.object().shape({
-    name: yup
-    .string().required('Enter a name.')
-    .min(3, 'You need a longer name.')
-    .max(16, 'Name is too long.'),
-    email: yup
-    .string().required('Enter an email.')
-    .email('Enter an email.')
-    .min(3,'You need a longer email.')
-    .max(36, 'Your email is too long.'),
+    username: yup
+    .string().required('Enter a username.')
+    .min(3, 'You need a longer username.')
+    .max(16, 'Username is too long.'),
     password: yup
     .string().required('Enter a password.')
     .min(6, 'Password is too short.')
@@ -53,12 +48,8 @@ export default function SignUp() {
                     <H2>Create your account</H2>
                     <StyledDiv2>
                         <Div>
-                            <Label htmlFor='name'>Name</Label>
-                            <Input name='name' type='text' ref={register} />
-                        </Div>
-                        <Div>
-                            <Label htmlFor='email'>Email</Label>
-                            <Input name='email' type='text' ref={register} />
+                            <Label htmlFor='username'>Username</Label>
+                            <Input name='username' type='text' ref={register} />
                         </Div>
                         <Div>
                             <Label htmlFor='name'>Password</Label>

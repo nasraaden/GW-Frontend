@@ -8,12 +8,11 @@ import { NavLink } from 'react-router-dom';
 import ErrorMessagesLI from './ErrorMessagesLI';
 
 const validationSchema = yup.object().shape({
-	email: yup
+	suername: yup
 		.string()
-		.required('Enter an email.')
-		.email('Enter an email')
-		.min(3, 'You need a longer email.')
-		.max(36, 'Your email is too long.'),
+		.required('Enter a username.')
+		.min(3, 'You need a longer username.')
+		.max(36, 'Your username is too long.'),
 	password: yup
 		.string()
 		.required('Enter a password.')
@@ -36,7 +35,7 @@ export default function Login(props) {
 
 	// email: 1234@gmail.com    password: 1234
 	const onSubmit = (data) => {
-		dispatch((state.email = data.email), (state.password = data.password));
+		dispatch((state.usermame = data.username), (state.password = data.password));
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axios
@@ -60,8 +59,8 @@ export default function Login(props) {
 				<H2>Sign In</H2>
 				<StyledDiv2>
 					<Div>
-						<Label htmlFor="email">Email</Label>
-						<Input name="email" type="text" ref={register} />
+						<Label htmlFor="username">Username</Label>
+						<Input name="username" type="text" ref={register} />
 					</Div>
 					<Div>
 						<Label htmlFor="name">Password</Label>
