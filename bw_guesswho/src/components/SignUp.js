@@ -78,12 +78,7 @@ export default function SignUp(props) {
 			.catch((err) => console.log(err));
 		document.getElementById('form').reset();
 	};
-
-export default function SignUp() {
-    const {register, handleSubmit, errors} = useForm({validationSchema: validationSchema});
-    const onSubmit = () => {document.getElementById('form').reset()};
-    {console.log(errors)}
-        return (
+    return (
             <Form id='form' onSubmit={handleSubmit(onSubmit)}>
                 <StyledDiv>
                     <Span3 className='backButton'><NavLink to='/'>{`<`}</NavLink></Span3>
@@ -112,3 +107,4 @@ export default function SignUp() {
         </Form>
     )
 }
+

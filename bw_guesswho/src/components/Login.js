@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import ErrorMessagesLI from './ErrorMessagesLI';
 
 const validationSchema = yup.object().shape({
-	suername: yup
+	username: yup
 		.string()
 		.required('Enter a username.')
 		.min(3, 'You need a longer username.')
