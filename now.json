@@ -1,0 +1,8 @@
+{
+    "version": 2,
+    "name": "bw_guesswho",
+    "builds": [{ "src": "bw_guesswho/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+    "routes": [
+        { "src": "/(.*)", "dest": "bw_guesswho/$1" }
+    ]
+}
