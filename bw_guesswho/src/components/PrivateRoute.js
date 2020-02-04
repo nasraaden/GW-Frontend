@@ -5,9 +5,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
 	return (
 		<Route
 			{...rest}
-			render={() => {
+			render={props => {
 				if (localStorage.getItem('token')) {
-					return <Component />;
+					console.log('AUTHENTICATED');
+					return <Component {...props}/>;
 				} else {
 					return <Redirect to="/login" />;
 				}
