@@ -16,7 +16,6 @@ const Game = props => {
     return (
         <div className="game">
             <Menu />
-            <h1>Game component!!!</h1>
             <Tweet />
             <PresCandidates />
         </div>
