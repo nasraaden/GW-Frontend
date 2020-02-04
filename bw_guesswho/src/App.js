@@ -15,7 +15,7 @@ function App() {
 		<AppDiv className="App">
 			<Switch>
 				<PrivateRoute exact path="/home-page" component={HomePage} />
-				<PrivateRoute exact path="/game" component={Game}/>} />
+				<PrivateRoute exact path="/game" component={Game} />
 				<Route path="/create-account" render={(props) => <SignUp {...props} />} />
 				<Route path="/" render={(props) => <Login {...props} />} />
 			</Switch>
