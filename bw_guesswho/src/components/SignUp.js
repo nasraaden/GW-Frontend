@@ -36,10 +36,10 @@ function equalTo(ref, msg) {
 yup.addMethod(yup.string, 'equalTo', equalTo);
 
 const validationSchema = yup.object().shape({
-    username: yup
-    .string().required('Enter a username.')
-    .min(3, 'You need a longer username.')
-    .max(16, 'Username is too long.'),
+    email: yup
+    .string().required('Enter an email.')
+    .min(3, 'You need a longer email.')
+    .max(16, 'Email is too long.'),
     password: yup
     .string().required('Enter a password.')
     .min(6, 'Password is too short.')
@@ -69,11 +69,12 @@ export default function SignUp(props) {
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axiosWithAuth()
-			.post('http://localhost:5000/api/login', state)
+			.post('api/login', state)
 			.then((res) => {
-				console.log('TOKEN:', res.data.payload);
-				localStorage.setItem('token', res.data.payload);
-				props.history.push('/home-page');
+				console.log('res from signup', res)
+				// console.log('TOKEN:', res.data.payload);
+				// localStorage.setItem('token', res.data.payload);
+				// props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));
 		document.getElementById('form').reset();
@@ -86,11 +87,11 @@ export default function SignUp(props) {
                     <H2>Create your account</H2>
                     <StyledDiv2>
                         <Div>
-                            <Label htmlFor='username'>Username</Label>
-                            <Input name='username' type='text' ref={register} />
+                            <Label htmlFor='email'>Email</Label>
+                            <Input name='email' type='text' ref={register} />
                         </Div>
                         <Div>
-                            <Label htmlFor='name'>Password</Label>
+                            <Label htmlFor='password'>Password</Label>
                             <Input name='password' type='password' ref={register} />
                         </Div>
                         <Div>
