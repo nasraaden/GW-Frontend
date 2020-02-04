@@ -5,7 +5,7 @@ import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
 
 const Game = props => {
-    console.log
+    console.log('props from Game', props);
     
     return (
         <div>

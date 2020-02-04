@@ -43,9 +43,9 @@ export default function Login(props) {
 			.post('/api/login', state)
 			.then((res) => {
 				console.log('res from Login', res);
-				// console.log('TOKEN:', res.data.payload);
-				// localStorage.setItem('token', res.data.payload);
-				// props.history.push('/home-page');
+				console.log('TOKEN:', res.data.payload);
+				localStorage.setItem('token', res.data.payload);
+				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));
 		document.getElementById('form').reset();
