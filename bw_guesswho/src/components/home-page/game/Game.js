@@ -4,7 +4,8 @@ import PresCandidates from './PresCandidates';
 import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
 
-const Game = () => {
+const Game = props => {
+    console.log
     
     return (
         <div>

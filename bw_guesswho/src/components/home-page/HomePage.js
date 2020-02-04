@@ -8,19 +8,7 @@ import PrivateRoute from '../PrivateRoute';
 import {Button, LongButton, P, StyledButton, StyledButton2} from '../../styles/Styles';
 
 const HomePage = props => {
-const [tweet, setTweet] = useState({})    
-    useEffect(() => {
-        axiosWithAuth()
-        .get('/api/tweets')
-        .then(res => {
-            console.log('RES:', res.data.rounds[0]);
-            setTweet(res.data.rounds[0].tweet);
-            console.log('tweet:', tweet);
-        })
-        .catch(err => {
-            console.log(err)       
-        })
-    }, [Button])
+
 
     return(
         <div>
