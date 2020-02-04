@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import PresCandidates from './PresCandidates';
 import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
 
 const Game = props => {
-    console.log('props from Game', props);
-    
+    // console.log('tweetObj from Game', props);
+
+    // useEffect(() => {
+    //     document.querySelector('.game').append(
+    //      <Tweet tweet={props.tweetObj.tweet.text}/>
+    //     )
+    // }, [])
+
     return (
-        <div>
+        <div className="game">
             <Menu />
             <h1>Game component!!!</h1>
             <Tweet />

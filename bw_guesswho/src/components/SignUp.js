@@ -52,7 +52,6 @@ const validationSchema = yup.object().shape({
 });
 
 const initialState = {
-	name: '',
 	email: '',
 	password: '',
 	// confirmPassword: ''
@@ -72,12 +71,12 @@ export default function SignUp(props) {
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axiosWithAuth()
-			.post('api/register', state)
+			.post('/api/register', state)
 			.then((res) => {
-					console.log('res from signup', res)
-				// console.log('TOKEN:', res.data.payload);
-				// localStorage.setItem('token', res.data.payload);
-				// props.history.push('/home-page');
+				console.log('res from signup', res)
+				console.log('TOKEN:', res.data.payload);
+				localStorage.setItem('token', res.data.payload);
+				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));
 		document.getElementById('form').reset();
