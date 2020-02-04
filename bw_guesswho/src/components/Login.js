@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { Form, Input, Button, Label, Div, StyledDiv, StyledDiv2, H2, P, Span1, Span2, Div2 } from '../styles/Styles';
 import * as yup from 'yup';
 import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 
@@ -38,11 +39,11 @@ export default function Login(props) {
 		dispatch((state.usermame = data.username), (state.password = data.password));
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
-		axios
+		axiosWithAuth()
 			.post('http://localhost:5000/api/login', state)
 			.then((res) => {
 				console.log('TOKEN:', res.data.payload);
-				// localStorage.setItem('token', res.data.payload);
+				localStorage.setItem('token', res.data.payload);
 				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));

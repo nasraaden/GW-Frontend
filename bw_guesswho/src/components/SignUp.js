@@ -1,27 +1,40 @@
-import React, {useState} from 'react';
-import styled from 'styled-components';
+import React, { useReducer } from 'react';
+import {
+	Form,
+	Input,
+	Button,
+	Label,
+	Div,
+	StyledDiv,
+	StyledDiv2,
+	H2,
+	P,
+	Span1,
+	Span2,
+	Span3,
+	Div2
+} from '../styles/Styles';
 import * as yup from 'yup';
-import {useForm} from 'react-hook-form';
-import {NavLink} from 'react-router-dom';
-
+import { useForm } from 'react-hook-form';
+import { NavLink } from 'react-router-dom';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 import ErrorMessagesSU from './ErrorMessagesSU';
-import {Form, StyledDiv, Span2, Span3, Div2, Span1, H2, StyledDiv2, Div, Label, Input, Button, P} from '../styles/Styles';
 
-function equalTo(ref: any, msg: any) {
-    return yup.mixed().test({
-        name: 'equalTo',
-        exclusive: false,
-        message: msg || '${path} must be the same as ${reference}',
-        params: {
-          reference: ref.path,
-        },
-        test: function(value: any) {
-          return value === this.resolve(ref);
-        },
-      });
-    }
-    yup.addMethod(yup.string, 'equalTo', equalTo);
-    
+function equalTo(ref, msg) {
+	return yup.mixed().test({
+		name: 'equalTo',
+		exclusive: false,
+		message: msg || '${path} must be the same as ${reference}',
+		params: {
+			reference: ref.path
+		},
+		test: function(value) {
+			return value === this.resolve(ref);
+		}
+	});
+}
+yup.addMethod(yup.string, 'equalTo', equalTo);
+
 const validationSchema = yup.object().shape({
     username: yup
     .string().required('Enter a username.')
@@ -35,6 +48,36 @@ const validationSchema = yup.object().shape({
     .equalTo(yup.ref('password'), 'Passwords must match.')
 });
 
+const initialState = {
+	name: '',
+	email: '',
+	password: '',
+	confirmPassword: ''
+};
+
+function loginReducer(state, action) {
+	return state;
+}
+
+export default function SignUp(props) {
+	const { register, handleSubmit, errors } = useForm({ validationSchema: validationSchema });
+	const [ state, dispatch ] = useReducer(loginReducer, initialState);
+
+	// email: 1234@gmail.com    password: 1234
+	const onSubmit = (data) => {
+		dispatch((state.email = data.email), (state.password = data.password));
+		console.log('state', state, 'data', data);
+		// e.preventDefault();
+		axiosWithAuth()
+			.post('http://localhost:5000/api/login', state)
+			.then((res) => {
+				console.log('TOKEN:', res.data.payload);
+				localStorage.setItem('token', res.data.payload);
+				props.history.push('/home-page');
+			})
+			.catch((err) => console.log(err));
+		document.getElementById('form').reset();
+	};
 
 export default function SignUp() {
     const {register, handleSubmit, errors} = useForm({validationSchema: validationSchema});
