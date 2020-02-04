@@ -37,7 +37,9 @@ yup.addMethod(yup.string, 'equalTo', equalTo);
 
 const validationSchema = yup.object().shape({
     email: yup
-    .string().required('Enter an email.')
+    .string()
+    .email('Must be in the form of an email.')
+    .required('Enter an email.')
     .min(3, 'You need a longer email.')
     .max(16, 'Email is too long.'),
     password: yup
@@ -69,9 +71,9 @@ export default function SignUp(props) {
 		console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axiosWithAuth()
-			.post('api/login', state)
+			.post('api/register', state)
 			.then((res) => {
-				console.log('res from signup', res)
+					console.log('res from signup', res)
 				// console.log('TOKEN:', res.data.payload);
 				// localStorage.setItem('token', res.data.payload);
 				// props.history.push('/home-page');

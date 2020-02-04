@@ -10,8 +10,8 @@ import ErrorMessagesLI from './ErrorMessagesLI';
 
 const validationSchema = yup.object().shape({
 	email: yup
-		.string()
-		.required('Enter an email.')
+        .string().email('Must be in the form of an email.')
+        .required('Enter an email.')
 		.min(3, 'You need a longer email.')
         .max(36, 'Your email is too long.'),
 	password: yup
@@ -37,12 +37,13 @@ export default function Login(props) {
 	// email: 1234@gmail.com    password: 1234
 	const onSubmit = (data) => {
 		dispatch((state.email = data.email), (state.password = data.password));
-		console.log('state', state, 'data', data);
+		// console.log('state', state, 'data', data);
 		// e.preventDefault();
 		axiosWithAuth()
 			.post('/api/login', state)
 			.then((res) => {
-				console.log('TOKEN:', res.data.payload);
+				console.log('res from Login', res);
+				// console.log('TOKEN:', res.data.payload);
 				// localStorage.setItem('token', res.data.payload);
 				// props.history.push('/home-page');
 			})
