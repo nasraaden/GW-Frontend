@@ -2,8 +2,8 @@
 
 
 const initialState = {
-  email: 'test',
-  password: 'test',
+  email: 'testing',
+  password: '123456',
   score: 0,
   isEditing: false
 }

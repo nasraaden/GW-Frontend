@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {NavLink} from 'react-router-dom';
 
 import {axiosWithAuth} from '../../../utils/axiosWithAuth';
-import {Choice, Div, ChoiceDiv, ScoreP} from '../../../styles/Styles';
+import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles';
 
 const PresCandidates = (props) => {
     const [handle1, setHandle1] = useState();
@@ -68,7 +68,10 @@ const PresCandidates = (props) => {
                     {/* <img src={url} /> */}
                     {console.log('this is count', props.count)}
                 </ChoiceDiv>
-            <ScoreP>{props.score}</ScoreP>
+            <InfoDiv>
+                <ScoreP>Score: {props.score}</ScoreP>
+                <LevelP>Level: {Math.floor(props.score/10)}</LevelP>
+            </InfoDiv>    
         </div>
     );
 }

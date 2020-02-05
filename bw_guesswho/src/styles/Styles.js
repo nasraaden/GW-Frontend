@@ -241,9 +241,6 @@ export const Submit = styled.button`
 	}
 `
 export const ScoreP = styled.p`
-    position: absolute;
-    top: 20%;
-    left: 20%;
     color: white;
     font-size: 2rem;
 `
@@ -265,4 +262,16 @@ export const ImageDiv = styled.div`
 export const PresImg = styled.img`
     width: 20%;
     border-radius: 30px;
+`
+export const LevelP = styled.p`
+	color: white;
+	font-size: 2rem;
+	margin-left: 0%;
+`
+export const InfoDiv = styled.div`
+	position: absolute;
+	top: 20%;
+	display: flex;
+	justify-content: space-evenly;
+	width: 100%;
 `
