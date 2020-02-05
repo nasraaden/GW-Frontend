@@ -35,10 +35,38 @@ const PresCandidates = (props) => {
         <div>
                 <ChoiceDiv className='pres'>
                     {console.log('this is correctAns', correctAns)}
-                    <Choice className='choice' id={id1} onClick={e => {e.preventDefault(); (e.target.id == correctAns)?(props.setScore(props.score + 1)):setWrongCount(wrongCount + 1); (props.count===2)?(props.setCount(0)):props.setCount(props.count + 1)}}>{handle1}</Choice>
-                    <Choice className='choice' id={id2} onClick={e => {e.preventDefault(); (e.target.id == correctAns)?(props.setScore(props.score + 1)):(console.log('Wrong answer, correctAns:', e.target.id, correctAns));(props.count===2)?(props.setCount(0)):props.setCount(props.count + 1)}}>{handle2}</Choice>
-                    <Choice className='choice' id={id3} onClick={e => {e.preventDefault(); (e.target.id == correctAns)?(props.setScore(props.score + 1)):(console.log('Wrong answer, correctAns:', e.target.id, correctAns));(props.count===2)?(props.setCount(0)):props.setCount(props.count + 1)}}>{handle3}</Choice>
+                    <Choice className='choice' id={id1} onClick={
+                        e => {
+                            e.preventDefault(); 
+                            (e.target.id == correctAns)?
+                            (props.setScore(props.score + 1)):
+                            setWrongCount(wrongCount + 1); 
+                            (props.count===29)?
+                            (props.setCount(0)):
+                            props.setCount(props.count + 1)
+                            }}>{handle1}</Choice>
+                    <Choice className='choice' id={id2} onClick={
+                        e => {
+                            e.preventDefault(); 
+                            (e.target.id == correctAns)?
+                            (props.setScore(props.score + 1)):
+                            setWrongCount(wrongCount + 1);(
+                                props.count===29)?(
+                                    props.setCount(0)):
+                                    props.setCount(props.count + 1)}
+                                    }>{handle2}</Choice>
+                    <Choice className='choice' id={id3} onClick={
+                        e => {
+                            e.preventDefault(); 
+                            (e.target.id == correctAns)?
+                            (props.setScore(props.score + 1)):
+                            setWrongCount(wrongCount + 1);(
+                                props.count===29)?(
+                                    props.setCount(0)):
+                                    props.setCount(props.count + 1)}
+                                    }>{handle3}</Choice>
                     {/* <img src={url} /> */}
+                    {console.log('this is count', props.count)}
                 </ChoiceDiv>
             <ScoreP>{props.score}</ScoreP>
         </div>

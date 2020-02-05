@@ -242,8 +242,8 @@ export const Submit = styled.button`
 `
 export const ScoreP = styled.p`
     position: absolute;
-    top: 90%;
-    left: 90%;
+    top: 20%;
+    left: 20%;
     color: white;
     font-size: 2rem;
 `

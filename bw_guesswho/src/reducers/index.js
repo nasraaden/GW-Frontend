@@ -1,13 +1,28 @@
+
+
+
 const initialState = {
-    score: 0
+  email: 'test',
+  password: 'test',
+  score: 0,
+  isEditing: false
 }
 
 export const Reducer = (state = initialState, action) => {
 
-    switch(action.type) {
-        case 'UPDATE_SCORE':
-            break;
-        default:
-            return state;
-    }
+  switch(action.type) {
+      case 'UPDATE_SCORE':
+          console.log(state.score);
+          return {
+              ...state,
+              // score: ++state.score
+          }
+      case 'TOGGLE_EDIT':
+          return {
+              ...state,
+            isEditing: !state.editing
+          }
+      default:
+          return state;
+  }
 }

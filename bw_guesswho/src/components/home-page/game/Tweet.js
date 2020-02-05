@@ -26,6 +26,7 @@ const Tweets = props => {
         <>
         <StyledTweet>{tweet}</StyledTweet>
         <PresCandidates score={score} setScore={setScore} setCount={setCount} count={count} />
+        {console.log('count in tweet', count)}
         </>
     );
 }
