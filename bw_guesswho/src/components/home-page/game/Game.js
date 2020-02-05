@@ -17,7 +17,6 @@ const Game = props => {
     return (
         <div className="game">
             <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
-            <ImageDiv><PresImg src='https://i.imgur.com/ouzOCeg.png' /><PresImg src='https://i.imgur.com/paFA0Wo.jpg' /><PresImg src='https://i.imgur.com/e6XiVjH.jpg' /></ImageDiv>
             <Menu />
             <Tweet />
         </div>

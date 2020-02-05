@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { axiosWithAuth } from './utils/axiosWithAuth';
 
+
 import './styles/App.css';
 import { AppDiv } from './styles/Styles';
 
@@ -11,6 +12,8 @@ import PrivateRoute from './components/PrivateRoute';
 import HomePage from './components/home-page/HomePage';
 import Game from './components/home-page/game/Game';
 import Account from './components/Account/Account';
+
+
 function App() {
 	
 	return (
