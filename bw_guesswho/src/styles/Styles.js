@@ -129,7 +129,8 @@ left: 36%;
 export const MenuDiv = styled.div`
     position: fixed;
     left: 85%;
-    top: 10%;
+	top: 10%;
+	z-index: 2;
 `
 export const ShowingDiv = styled.div`
     display: flex;
@@ -270,8 +271,9 @@ export const LevelP = styled.p`
 `
 export const InfoDiv = styled.div`
 	position: absolute;
-	top: 20%;
+	top: 10%;
 	display: flex;
 	justify-content: space-evenly;
 	width: 100%;
+	height: 10%;
 `

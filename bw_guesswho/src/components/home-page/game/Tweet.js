@@ -8,6 +8,7 @@ const Tweets = props => {
     const [tweet, setTweet] = useState(); 
     const [count, setCount] = useState(0); 
     const [score, setScore] = useState(0); 
+    
     useEffect(() => {
         axiosWithAuth()
         .get('/api/tweets')

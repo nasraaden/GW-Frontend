@@ -74,8 +74,9 @@ export default function SignUp(props) {
 			.post('/api/register', state)
 			.then((res) => {
 				console.log('res from signup', res)
-				console.log('TOKEN:', res.data.payload);
-				localStorage.setItem('token', res.data.payload);
+				console.log('TOKEN:', res.data.token);
+				localStorage.setItem('token', res.data.token);
+				localStorage.setItem('id', res.data.id);
 				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));
