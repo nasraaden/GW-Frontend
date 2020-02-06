@@ -16,7 +16,7 @@ useEffect( () => {
         .then(res => {
             setEmail(res.data.email)
             setPoints(res.data.points)
-        })
+    })
         .catch(err => console.log(err))
 },[])
     return (

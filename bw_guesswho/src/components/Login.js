@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState, useEffect } from 'react';
 import { Form, Input, Button, Label, Div, StyledDiv, StyledDiv2, H2, P, Span1, Span2, Div2 } from '../styles/Styles';
 import * as yup from 'yup';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
@@ -31,9 +31,9 @@ function loginReducer(state, action) {
 }
 
 function Login(props) {
+	const [score, setScore] = useState()
 	const { register, handleSubmit, errors } = useForm({ validationSchema: validationSchema });
 	const [ state, dispatch ] = useReducer(loginReducer, initialState);
-
 	// email: 1234@gmail.com    password: 1234
 	const onSubmit = (data) => {
 		console.log('Data from Login\'n onSubmit', data);
@@ -50,9 +50,12 @@ function Login(props) {
 				props.history.push('/home-page');
 			})
 			.catch((err) => console.log(err));
+			const getPoints = () => axiosWithAuth().get(`/api/users/${localStorage.id}`).then(res=>localStorage.setItem('points',res.data.points));
+			getPoints();
 		document.getElementById('form').reset();
+		
 	};
-
+		
 	return (
 		<Form id='form' onSubmit={handleSubmit(onSubmit)}>
 			<StyledDiv>

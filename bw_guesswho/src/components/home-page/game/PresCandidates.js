@@ -6,7 +6,15 @@ import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles
 
 const PresCandidates = (props) => {
     const id = localStorage.id
-    const putRequest = useState(axiosWithAuth().put(`/api/users/${id}`, {points: props.score}))
+    const putRequest = useState(
+        axiosWithAuth()
+        .put(`/api/users/${id}`, {points: props.score})
+        .then(axiosWithAuth()
+        .get(`/api/users/${id}`)
+        .then(res => {
+              console.log('get points after put request',res)
+              
+    })))
     
     const [handle1, setHandle1] = useState();
     const [handle2, setHandle2] = useState();
@@ -36,8 +44,7 @@ const PresCandidates = (props) => {
     // console.log('tweet from pres', tweet);
     return (
         <div>
-                <ChoiceDiv className='pres'>
-                    {console.log('this is correctAns', correctAns)}
+                <ChoiceDiv className='pres'> 
                     <Choice className='choice' id={id1} onClick={
                         e => {
                             e.preventDefault(); 
@@ -68,12 +75,10 @@ const PresCandidates = (props) => {
                                     props.setCount(0)):
                                     props.setCount(props.count + 1)}
                                     }>{handle3}</Choice>
-                    {/* <img src={url} /> */}
-                    {console.log('this is count', props.count)}
                 </ChoiceDiv>
             <InfoDiv>
                 <ScoreP>Score: {props.score}</ScoreP>
-                <LevelP>Level: {Math.floor(props.score/10)}</LevelP>
+                <LevelP>Level: {Math.floor(props.score / 10)}</LevelP>
             </InfoDiv>    
         </div>
     );
