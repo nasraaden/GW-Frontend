@@ -1,18 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import PresCandidates from './PresCandidates';
 import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
+import {Div2, Span1, Span2, GameDiv} from '../../../styles/Styles';
 
-const Game = () => {
+const Game = props => {
     
     return (
-        <div>
+        <GameDiv className="game">
             <Menu />
-            <h1>Game component!!!</h1>
             <Tweet />
-            <PresCandidates />
-        </div>
+        </GameDiv>
     )
 }
 
