@@ -10,7 +10,7 @@ import ErrorMessagesLI from './ErrorMessagesLI';
 const validationSchema = yup.object().shape({
 	email: yup
         .string()
-        // .email('Must be in the form of an email.')
+        .email('Must be in the form of an email.')
         .required('Enter an email.')
 		.min(3, 'You need a longer email.')
         .max(36, 'Your email is too long.'),

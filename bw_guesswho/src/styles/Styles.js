@@ -277,3 +277,25 @@ export const InfoDiv = styled.div`
 	width: 100%;
 	height: 10%;
 `
+export const DeleteButton = styled.button`
+	padding: 10%;
+	color: white;
+	font-size: 3rem;
+	background-color: red;
+	border: none;
+	border-radius: 15px;
+	:active {
+		color: red;
+		background-color: white;
+	}
+`
+export const DeleteDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
+`
+export const DeleteP = styled.p`
+	color: white;
+	font-size: 1.5rem;
+`
