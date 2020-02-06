@@ -11,7 +11,6 @@ export const AppDiv = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
 	height: 100vh;
 	max-width: 100vw;
 `;
@@ -121,8 +120,8 @@ export const Div2 = styled.div`
 display: flex;
 align-items: baseline;
 position: absolute;
-top: 5%;
-left: 36%;
+top: 4%;
+left: 40%;
 `;
 
 // Menu styling
@@ -255,6 +254,11 @@ export const StyledTweet = styled.p`
 	border: 2px solid white;
 	padding: 2%;
 `
+export const TweetDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-content: space-between;
+`
 export const ImageDiv = styled.div`
     position: absolute;
     top: 20%;
@@ -277,6 +281,12 @@ export const InfoDiv = styled.div`
 	justify-content: space-evenly;
 	width: 100%;
 	height: 10%;
+`
+export const GameDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 100%;
 `
 //Setting Styles
 export const DeleteButton = styled.button`

@@ -4,7 +4,7 @@ import { axiosWithAuth } from './utils/axiosWithAuth';
 
 
 import './styles/App.css';
-import { AppDiv } from './styles/Styles';
+import { AppDiv, Div2, Span1, Span2 } from './styles/Styles';
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -19,6 +19,7 @@ function App() {
 	
 	return (
 		<AppDiv className="App">
+			<Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
 			<Switch>
 				<PrivateRoute exact path="/home-page" component={HomePage} />
                 <Route path="/account" component={Account} />

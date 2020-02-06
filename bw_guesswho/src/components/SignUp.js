@@ -83,7 +83,6 @@ export default function SignUp(props) {
             <Form id='form' onSubmit={handleSubmit(onSubmit)}>
                 <StyledDiv>
                     <Span3 className='backButton'><NavLink to='/'>{`<`}</NavLink></Span3>
-                    <Div2><Span1>Guess</Span1><Span2>Who?</Span2></Div2>
                     <H2>Create your account</H2>
                     <StyledDiv2>
                         <Div>
