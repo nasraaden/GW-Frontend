@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import Tweet from './Tweet';
 import Menu from '../../Nav/Menu';
-import {Div2, Span1, Span2, ImageDiv, PresImg} from '../../../styles/Styles';
+import {Div2, Span1, Span2} from '../../../styles/Styles';
 
 const Game = props => {
     

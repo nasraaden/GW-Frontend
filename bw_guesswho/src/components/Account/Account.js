@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { editUserInfo } from '../actions';
 import Menu from '../Nav/Menu'; 
 import {axiosWithAuth} from '../../utils/axiosWithAuth';
+import {AccountDiv} from '../../styles/Styles';
 
 function Account(props) {
 const id = localStorage.id
@@ -20,11 +21,11 @@ useEffect( () => {
         .catch(err => console.log(err))
 },[])
     return (
-            <div>
+            <AccountDiv>
                 <Menu />
                 <h1>Email: {email}</h1>
                 <h1>Score: {points}</h1>
-            </div>
+            </AccountDiv>
     )
 }
 
