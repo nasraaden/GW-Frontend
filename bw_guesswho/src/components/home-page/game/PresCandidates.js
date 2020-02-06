@@ -1,10 +1,7 @@
 import React, {useState, useEffect} from 'react';
-// import { library, icon } from '@fortawesome/fontawesome-svg-core'
-// import { fa-check } from '@fortawesome/free-solid-svg-icons'
 
-// library.add(fa-check)
-
-// const camera = icon({ prefix: 'fas', iconName: 'camera' })
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 import {axiosWithAuth} from '../../../utils/axiosWithAuth';
 import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles';
@@ -49,6 +46,8 @@ const PresCandidates = (props) => {
     // console.log('tweet from pres', tweet);
     return (
         <div>
+        <FontAwesomeIcon icon={faCheck} />
+        <FontAwesomeIcon icon={faTimes} />
                 <ChoiceDiv className='pres'> 
                     <Choice className='choice' id={id1} onClick={
                         e => {
@@ -60,7 +59,6 @@ const PresCandidates = (props) => {
                             (props.setCount(0)):
                             props.setCount(props.count + 1)
                             }}>{handle1}</Choice>
-                            
                     <Choice className='choice' id={id2} onClick={
                         e => {
                             e.preventDefault(); 
