@@ -1,4 +1,10 @@
 import React, {useState, useEffect} from 'react';
+// import { library, icon } from '@fortawesome/fontawesome-svg-core'
+// import { fa-check } from '@fortawesome/free-solid-svg-icons'
+
+// library.add(fa-check)
+
+// const camera = icon({ prefix: 'fas', iconName: 'camera' })
 
 import {axiosWithAuth} from '../../../utils/axiosWithAuth';
 import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles';
@@ -54,6 +60,7 @@ const PresCandidates = (props) => {
                             (props.setCount(0)):
                             props.setCount(props.count + 1)
                             }}>{handle1}</Choice>
+                            
                     <Choice className='choice' id={id2} onClick={
                         e => {
                             e.preventDefault(); 

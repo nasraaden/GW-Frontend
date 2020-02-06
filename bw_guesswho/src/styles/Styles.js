@@ -200,7 +200,7 @@ export const StyledButton2 = styled.button`
 //Game Styles
 export const Choice = styled.button`
 	color: white;
-	width: 50%;
+	width: 100%;
 	border-radius: 30px;
 	height: 20%;
 	padding: 15px;
@@ -218,7 +218,7 @@ export const Choice = styled.button`
 export const ChoiceDiv = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 50%;
 	justify-content: center;
 	position: absolute;
 	left: 25%;
