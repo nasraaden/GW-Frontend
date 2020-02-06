@@ -5,6 +5,9 @@ import {axiosWithAuth} from '../../../utils/axiosWithAuth';
 import {Choice, ChoiceDiv, ScoreP, InfoDiv, LevelP} from '../../../styles/Styles';
 
 const PresCandidates = (props) => {
+    const id = localStorage.id
+    const putRequest = useState(axiosWithAuth().put(`/api/users/${id}`, {points: props.score}))
+    
     const [handle1, setHandle1] = useState();
     const [handle2, setHandle2] = useState();
     const [handle3, setHandle3] = useState();
@@ -39,7 +42,7 @@ const PresCandidates = (props) => {
                         e => {
                             e.preventDefault(); 
                             (e.target.id == correctAns)?
-                            (props.setScore(props.score + 1)):
+                            ({putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1); 
                             (props.count===29)?
                             (props.setCount(0)):
@@ -49,7 +52,7 @@ const PresCandidates = (props) => {
                         e => {
                             e.preventDefault(); 
                             (e.target.id == correctAns)?
-                            (props.setScore(props.score + 1)):
+                            ({putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
@@ -59,7 +62,7 @@ const PresCandidates = (props) => {
                         e => {
                             e.preventDefault(); 
                             (e.target.id == correctAns)?
-                            (props.setScore(props.score + 1)):
+                            ({putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
