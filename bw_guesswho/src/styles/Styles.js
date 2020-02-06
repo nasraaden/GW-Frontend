@@ -214,6 +214,9 @@ export const Choice = styled.button`
 		background: #1b9bea;
 		color: white;
 	}
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
 `
 export const ChoiceDiv = styled.div`
 	display: flex;

@@ -46,8 +46,7 @@ const PresCandidates = (props) => {
     // console.log('tweet from pres', tweet);
     return (
         <div>
-        <FontAwesomeIcon icon={faCheck} />
-        <FontAwesomeIcon icon={faTimes} />
+        {/* <FontAwesomeIcon className="xIcon" icon={faTimes} /> */}
                 <ChoiceDiv className='pres'> 
                     <Choice className='choice' id={id1} onClick={
                         e => {
@@ -56,9 +55,10 @@ const PresCandidates = (props) => {
                             ({putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1); 
                             (props.count===29)?
-                            (props.setCount(0)):
-                            props.setCount(props.count + 1)
-                            }}>{handle1}</Choice>
+                      (props.setCount(0)):
+                            (props.setCount(props.count + 1))
+                            }}>{handle1}
+                    </Choice>
                     <Choice className='choice' id={id2} onClick={
                         e => {
                             e.preventDefault(); 
@@ -67,18 +67,20 @@ const PresCandidates = (props) => {
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
-                                    props.setCount(props.count + 1)}
-                                    }>{handle2}</Choice>
+                                    (props.setCount(props.count + 1))}
+                                    }>{handle2}
+                    </Choice>
                     <Choice className='choice' id={id3} onClick={
                         e => {
                             e.preventDefault(); 
                             (e.target.id == correctAns)?
-                            ({putRequest}&&props.setScore(props.score + 1)):
+                            (document.getElementById('3').classList.toggle('hidden')&&{putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
-                                    props.setCount(props.count + 1)}
-                                    }>{handle3}</Choice>
+                                    (props.setCount(props.count + 1))}
+                                    }>{handle3}
+                    </Choice>
                 </ChoiceDiv>
             <InfoDiv>
                 <ScoreP>Score: {props.score}</ScoreP>
