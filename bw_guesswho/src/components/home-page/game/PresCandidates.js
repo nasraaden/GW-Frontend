@@ -62,7 +62,7 @@ const PresCandidates = (props) => {
                             (props.count===29)?
                       (props.setCount(0)):
                             (props.setCount(props.count + 1))
-                            }}><PresCandImg src={image}/>{handle1}
+                            }}><PresCandImg src={image}/>@{handle1}
                     </Choice>
                     <Choice className='choice' id={id2} onClick={
                         e => {
@@ -73,7 +73,7 @@ const PresCandidates = (props) => {
                                 props.count===29)?(
                                     props.setCount(0)):
                                     (props.setCount(props.count + 1))}
-                                    }><PresCandImg src={image2}/>{handle2}
+                                    }><PresCandImg src={image2}/>@{handle2}
                     </Choice>
                     <Choice className='choice' id={id3} onClick={
                         e => {
@@ -84,7 +84,7 @@ const PresCandidates = (props) => {
                                 props.count===29)?(
                                     props.setCount(0)):
                                     (props.setCount(props.count + 1))}
-                                }><PresCandImg src={image3}/>{handle3}
+                                }><PresCandImg src={image3}/>@{handle3}
                     </Choice>
                 </ChoiceDiv>
             <InfoDiv>
