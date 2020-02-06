@@ -251,7 +251,6 @@ export const StyledTweet = styled.p`
     color: white;
     text-align: left;
     margin: 1em;
-    border: 1px solid white;
     box-shadow: 5px 5px rgba(0, 0, /0, 25%);
 `
 export const ImageDiv = styled.div`
