@@ -153,11 +153,20 @@ export const LongButton = styled.button`
 	position: relative;
 	margin: 1% 0;
 	background-color: white;
-	color: #1b9bea;
-	:disabled {
-		background-color: #aab8c2;
-		color: white;
-	}
+	background-color: #aab8c2;
+	color: white;
+`
+export const PresButton = styled.button`
+	width: 55%;
+	border-radius: 30px;
+	height: 20%;
+	padding: 15px;
+	box-shadow: none;
+	border: none;
+	position: relative;
+	margin: 1% 0;
+	background-color: white;
+	color: #1B9BEA;
 `
 export const StyledButton = styled.button`
 	width: 50%;
@@ -192,10 +201,8 @@ export const StyledButton2 = styled.button`
 	border-left: none;
 	border-top: none;
 	border-bottom: none;
-	:disabled {
-		background-color: #aab8c2;
-		color: white;
-	}
+	background-color: #aab8c2;
+	color: white;
 `
 //Game Styles
 export const Choice = styled.button`

@@ -46,7 +46,6 @@ const PresCandidates = (props) => {
     // console.log('tweet from pres', tweet);
     return (
         <div>
-        {/* <FontAwesomeIcon className="xIcon" icon={faTimes} /> */}
                 <ChoiceDiv className='pres'> 
                     <Choice className='choice' id={id1} onClick={
                         e => {
@@ -74,7 +73,7 @@ const PresCandidates = (props) => {
                         e => {
                             e.preventDefault(); 
                             (e.target.id == correctAns)?
-                            (document.getElementById('3').classList.toggle('hidden')&&{putRequest}&&props.setScore(props.score + 1)):
+                            ({putRequest}&&props.setScore(props.score + 1)):
                             setWrongCount(wrongCount + 1);(
                                 props.count===29)?(
                                     props.setCount(0)):
