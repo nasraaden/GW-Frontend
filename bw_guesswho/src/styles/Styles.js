@@ -207,6 +207,7 @@ export const StyledButton2 = styled.button`
 //Game Styles
 export const Choice = styled.button`
 	color: white;
+	font-size: 1.2rem;
 	width: 100%;
 	border-radius: 30px;
 	height: 20%;
@@ -275,7 +276,7 @@ export const ImageDiv = styled.div`
     display: flex;
     justify-content: space-evenly;
 `
-export const PresImg = styled.img`
+export const Cand = styled.img`
     width: 20%;
     border-radius: 30px;
 `
@@ -297,6 +298,11 @@ export const GameDiv = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	width: 100%;
+`
+export const PresCandImg = styled.img`
+	height: 30px;
+	width: 30px;
+	border-radius: 50px;
 `
 //Setting Styles
 export const DeleteButton = styled.button`
