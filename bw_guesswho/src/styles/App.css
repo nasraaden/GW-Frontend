@@ -1,44 +1,42 @@
 .App {
-    text-align: center;
-    box-sizing: border-box;
+  text-align: center;
+  box-sizing: border-box;
 }
 body {
-	background-image: url('https://i.imgur.com/tAgIpFC.png');
-	font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+  background-image: url('https://i.imgur.com/tAgIpFC.png');
+  font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 a {
-	color: white;
+  color: white;
 }
-button {
-	border: 5px solid green;
-}
+
 .backButton a {
-    text-decoration: none;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 40px;
+  text-decoration: none;
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 40px;
 }
 .menudiv .hidden {
-    display: none;
+  display: none;
 }
 .menudiv a {
-    text-decoration: none;
-    color: #1B9BEA;
-    padding: 10% 0;
+  text-decoration: none;
+  color: #1b9bea;
+  padding: 10% 0;
 }
 .navLink {
-    color: #1B9BEA;
-    text-decoration: none;
+  color: #1b9bea;
+  text-decoration: none;
 }
 .checkIcon {
-    color: #0dcc0d;
-    font-size: 1.3rem;
+  color: #0dcc0d;
+  font-size: 1.3rem;
 }
 .xIcon {
-    color: red;
-    font-size: 1.3rem;
-    display: none;
+  color: red;
+  font-size: 1.3rem;
+  display: none;
 }
 .hidden {
-    display: none;
+  display: none;
 }
