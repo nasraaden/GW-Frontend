@@ -22,11 +22,11 @@ const HomePage = (props) => {
   return (
     <div>
       <MenuDiv2>
-        <Menu />
         <Div2>
-          <Span1>Guess</Span1>
-          <Span2>Who?</Span2>
+          <Span2>Guess</Span2>
+          <Span1>Who?</Span1>
         </Div2>
+        <Menu />
       </MenuDiv2>
       <P>Choose Game Mode</P>
       <div>

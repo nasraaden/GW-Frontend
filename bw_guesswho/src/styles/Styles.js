@@ -88,15 +88,16 @@ export const Span1 = styled.span`
   color: white;
   font-size: 2rem;
   margin-right: 1px;
-  border: 2px solid pink;
   text-align: center;
+  letter-spacing: 0.1rem;
 `;
 export const Span2 = styled.span`
   font-family: 'Roboto', sans-serif;
   color: white;
   font-size: 2rem;
-  border: 2px solid purple;
   text-align: center;
+  letter-spacing: -0.1rem;
+  font-weight: bold;
 `;
 
 export const StyledP = styled.p`
@@ -124,14 +125,22 @@ export const Div2 = styled.div`
 
 // Menu styling
 export const MenuDiv = styled.div`
-  position: fixed;
-  left: 85%;
-  top: 10%;
-  z-index: 2;
+  display: flex;
+  border: 2px solid red;
+  align-items: center;
+  justify-content: center;
 `;
 export const MenuDiv2 = styled.div`
   display: flex;
-  border: 2px solid red;
+  //   border: 2px solid red;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem;
+`;
+export const MenuDiv3 = styled.div`
+  display: flex;
+  //   border: 2px solid red;
+  color: black;
 `;
 export const ShowingDiv = styled.div`
   display: flex;
@@ -143,6 +152,14 @@ export const ShowingDiv = styled.div`
   padding: 2% 5%;
   border-radius: 0.5rem;
 `;
+export const DrawerLink = styled.div`
+	display: flex;
+	flex-direction: column;
+	margin: 2rem;
+	text-decoration: none;
+	color: black;
+	font-family: 'Montserrat', sans-serif;
+  }`;
 //HomePage styles
 export const LongButton = styled.button`
   width: 23rem;
@@ -157,7 +174,6 @@ export const LongButton = styled.button`
   background-color: white;
   background-color: #aab8c2;
   color: white;
-  border: 2px solid red;
 `;
 export const PresButton = styled.button`
   width: 23rem;
@@ -193,7 +209,7 @@ export const PlayButton = styled.button`
   border-radius: 3rem;
   padding: 1rem 0;
   color: #1b9bea;
-  margin-top: 2rem;
+  margin: 2rem;
   border: none;
   cursor: pointer;
 `;
