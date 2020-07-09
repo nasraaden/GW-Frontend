@@ -1,21 +1,59 @@
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-import {MenuDiv, ShowingDiv} from '../../styles/Styles';
+import { MenuDiv, MenuDiv3 } from '../../styles/Styles';
 
-const handleClick = () => console.log(document.getElementById('menubuttons').classList.toggle('hidden'));
+import { IoMdClose } from 'react-icons/io';
+import { AiOutlineMenu } from 'react-icons/ai';
+
+import {
+  useDisclosure,
+  Drawer,
+  DrawerBody,
+  DrawerHeader,
+  DrawerFooter,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  Input,
+  Button,
+} from '@chakra-ui/core';
+
+const handleClick = () =>
+  console.log(
+    document.getElementById('menubuttons').classList.toggle('hidden')
+  );
 export default function Menu() {
-    const MenuButtons = 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const btnRef = React.useRef();
+  return (
     <div>
-        <div><NavLink to='/account'> Account </NavLink></div>
-        <div><NavLink to='/settings'> Settings </NavLink></div>
-        <div><NavLink to='/logout' onClick={()=>localStorage.clear()}> Log Out </NavLink></div>
-        <div><NavLink to='/home-page'>Home</NavLink></div>
+      <AiOutlineMenu className='nav-open' onClick={onOpen} />
+      <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <IoMdClose className='nav-close' onClick={onClose} />
+
+          <DrawerBody className='drawer-body'>
+            <NavLink to='/home-page' className='nav-link'>
+              Home
+            </NavLink>
+            <NavLink to='/account' className='nav-link'>
+              Account
+            </NavLink>
+            <NavLink to='/settings' className='nav-link'>
+              Settings
+            </NavLink>
+            <NavLink
+              to='/logout'
+              onClick={() => localStorage.clear()}
+              className='nav-link'
+            >
+              Log Out
+            </NavLink>
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
     </div>
-    return (
-        <MenuDiv className='menudiv'>
-            <img src='https://i.imgur.com/4QBK6hQ.png' onClick={handleClick}></img>
-            <ShowingDiv id='menubuttons' className='hidden'>{MenuButtons}</ShowingDiv>
-        </MenuDiv>
-    )
+  );
 }

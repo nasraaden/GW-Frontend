@@ -12,21 +12,25 @@ import Game from './components/home-page/game/Game';
 import Account from './components/Account/Account';
 import Settings from './components/Settings/Settings';
 
+import { ThemeProvider } from '@chakra-ui/core';
+
 function App() {
   return (
-    <AppDiv className='App'>
-      <Switch>
-        <PrivateRoute exact path='/home-page' component={HomePage} />
-        <Route path='/account' component={Account} />
-        <Route path='/settings' render={(props) => <Settings {...props} />} />
-        <Route exact path='/game' render={(props) => <Game {...props} />} />
-        <Route
-          path='/create-account'
-          render={(props) => <SignUp {...props} />}
-        />
-        <Route path='/' render={(props) => <Login {...props} />} />
-      </Switch>
-    </AppDiv>
+    <ThemeProvider>
+      <AppDiv className='App'>
+        <Switch>
+          <PrivateRoute exact path='/home-page' component={HomePage} />
+          <Route path='/account' component={Account} />
+          <Route path='/settings' render={(props) => <Settings {...props} />} />
+          <Route exact path='/game' render={(props) => <Game {...props} />} />
+          <Route
+            path='/create-account'
+            render={(props) => <SignUp {...props} />}
+          />
+          <Route path='/' render={(props) => <Login {...props} />} />
+        </Switch>
+      </AppDiv>
+    </ThemeProvider>
   );
 }
 

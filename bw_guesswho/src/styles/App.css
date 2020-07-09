@@ -7,9 +7,9 @@ body {
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
 }
-a {
+/* a {
   color: white;
-}
+} */
 
 .backButton a {
   text-decoration: none;
@@ -19,15 +19,7 @@ a {
 .menudiv .hidden {
   display: none;
 }
-.menudiv a {
-  text-decoration: none;
-  color: #1b9bea;
-  padding: 10% 0;
-}
-.navLink {
-  color: #1b9bea;
-  text-decoration: none;
-}
+
 .checkIcon {
   color: #0dcc0d;
   font-size: 1.3rem;
@@ -37,6 +29,25 @@ a {
   font-size: 1.3rem;
   display: none;
 }
-.hidden {
-  display: none;
+.nav-open {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: white;
+}
+
+.nav-close {
+  width: 2rem;
+  height: 2rem;
+  margin: 1rem;
+}
+
+.drawer-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link {
+  margin: 0.5rem;
+  text-decoration: none;
+  color: #1b9bea;
 }
