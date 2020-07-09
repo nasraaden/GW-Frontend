@@ -1,10 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { axiosWithAuth } from '../../utils/axiosWithAuth';
-import { NavLink, Route } from 'react-router-dom';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 import Menu from '../Nav/Menu';
-import Game from './game/Game';
-import PrivateRoute from '../PrivateRoute';
+
 import {
   MenuDiv2,
   LongButton,

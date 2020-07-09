@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import './styles/App.css';
-import { AppDiv, Div2, Span1, Span2, H2 } from './styles/Styles';
+import { AppDiv } from './styles/Styles';
 
 import Login from './components/Login';
 import SignUp from './components/SignUp';
@@ -27,7 +27,7 @@ function App() {
             path='/create-account'
             render={(props) => <SignUp {...props} />}
           />
-          <Route path='/' render={(props) => <Login {...props} />} />
+          <Route path='/login' render={(props) => <Login {...props} />} />
         </Switch>
       </AppDiv>
     </ThemeProvider>

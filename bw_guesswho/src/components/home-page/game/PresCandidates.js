@@ -4,6 +4,9 @@ import { axiosWithAuth } from '../../../utils/axiosWithAuth';
 import {
   Choice,
   ChoiceDiv,
+  ChoiceDiv2,
+  NameP,
+  HandleP,
   ScoreP,
   InfoDiv,
   LevelP,
@@ -23,6 +26,9 @@ const PresCandidates = (props) => {
           })
       )
   );
+  const [name1, setName1] = useState();
+  const [name2, setName2] = useState();
+  const [name3, setName3] = useState();
 
   const [handle1, setHandle1] = useState();
   const [handle2, setHandle2] = useState();
@@ -41,10 +47,13 @@ const PresCandidates = (props) => {
       .get('/api/tweets')
       .then((res) => {
         setHandle1(res.data.rounds[props.count].options[0].handle);
+        setName1(res.data.rounds[props.count].options[0].name);
         setId1(res.data.rounds[props.count].options[0].id);
         setHandle2(res.data.rounds[props.count].options[1].handle);
+        setName2(res.data.rounds[props.count].options[1].name);
         setId2(res.data.rounds[props.count].options[1].id);
         setHandle3(res.data.rounds[props.count].options[2].handle);
+        setName3(res.data.rounds[props.count].options[2].name);
         setId3(res.data.rounds[props.count].options[2].id);
         setCorrectAns(res.data.rounds[props.count].correct_option_id);
         setImage(res.data.rounds[props.count].options[0].picture_url);
@@ -72,7 +81,11 @@ const PresCandidates = (props) => {
               : props.setCount(props.count + 1);
           }}
         >
-          <PresCandImg src={image} />@{handle1}
+          <PresCandImg src={image} />
+          <ChoiceDiv2>
+            <NameP>{name1}</NameP>
+            <HandleP>@{handle1}</HandleP>
+          </ChoiceDiv2>
         </Choice>
 
         <Choice
@@ -88,7 +101,11 @@ const PresCandidates = (props) => {
               : props.setCount(props.count + 1);
           }}
         >
-          <PresCandImg src={image2} />@{handle2}
+          <PresCandImg src={image2} />
+          <ChoiceDiv2>
+            <NameP>{name2}</NameP>
+            <HandleP>@{handle2}</HandleP>
+          </ChoiceDiv2>
         </Choice>
 
         <Choice
@@ -104,7 +121,11 @@ const PresCandidates = (props) => {
               : props.setCount(props.count + 1);
           }}
         >
-          <PresCandImg src={image3} />@{handle3}
+          <PresCandImg src={image3} />
+          <ChoiceDiv2>
+            <NameP>{name3}</NameP>
+            <HandleP className='handle'>@{handle3}</HandleP>
+          </ChoiceDiv2>
         </Choice>
       </ChoiceDiv>
       <InfoDiv>

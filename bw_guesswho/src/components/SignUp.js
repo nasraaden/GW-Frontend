@@ -9,10 +9,7 @@ import {
   StyledDiv2,
   H2,
   P,
-  Span1,
-  Span2,
   Span3,
-  Div2,
 } from '../styles/Styles';
 import * as yup from 'yup';
 import { useForm } from 'react-hook-form';
@@ -24,7 +21,7 @@ function equalTo(ref, msg) {
   return yup.mixed().test({
     name: 'equalTo',
     exclusive: false,
-    message: msg || '${path} must be the same as ${reference}',
+    message: msg || 'path must be the same as reference',
     params: {
       reference: ref.path,
     },
@@ -107,7 +104,7 @@ export default function SignUp(props) {
           Sign Up
         </Button>
         <P>
-          Already have an account? <NavLink to='/'>Log In</NavLink>
+          Already have an account? <NavLink to='/login'>Log In</NavLink>
         </P>
       </StyledDiv>
     </Form>

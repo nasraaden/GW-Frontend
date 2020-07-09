@@ -30,12 +30,14 @@ body {
   width: 2.5rem;
   height: 2.5rem;
   color: white;
+  cursor: pointer;
 }
 
 .nav-close {
   width: 2rem;
   height: 2rem;
   margin: 1rem;
+  cursor: pointer;
 }
 
 .drawer-body {

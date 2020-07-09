@@ -26,9 +26,7 @@ const Tweets = (props) => {
 
   return (
     <TweetDiv>
-      <StyledTweet>
-        <p>{tweet}</p>
-      </StyledTweet>
+      <StyledTweet>{tweet}</StyledTweet>
       <PresCandidates
         score={score}
         setScore={setScore}
