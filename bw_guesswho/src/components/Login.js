@@ -45,16 +45,12 @@ function Login(props) {
     validationSchema: validationSchema,
   });
   const [state, dispatch] = useReducer(loginReducer, initialState);
-  // email: 1234@gmail.com    password: 1234
   const onSubmit = (data) => {
-    console.log("Data from Login'n onSubmit", data);
     dispatch((state.email = data.email), (state.password = data.password));
 
     axiosWithAuth()
       .post('/api/login', state)
       .then((res) => {
-        console.log('res from Login', res);
-        console.log('TOKEN:', res.data.token);
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('id', res.data.id);
         props.history.push('/home-page');

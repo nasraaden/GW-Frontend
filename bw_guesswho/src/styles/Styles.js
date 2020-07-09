@@ -11,7 +11,6 @@ export const AppDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  //   height: 100vh;
   max-width: 100vw;
 `;
 
@@ -32,7 +31,6 @@ export const Input = styled.input`
   border-radius: 0.5rem;
   margin: 2% 0;
   postition: absolute;
-  //   left: 90%;
 `;
 export const Button = styled.button`
   border-radius: 0.5rem;
@@ -102,6 +100,23 @@ export const Span2 = styled.span`
   letter-spacing: -0.1rem;
   font-weight: bold;
 `;
+export const Span4 = styled.span`
+  font-family: 'Londrina Outline', cursive;
+  color: #1b9bea;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-right: 1px;
+  text-align: center;
+  letter-spacing: 0.1rem;
+`;
+export const Span5 = styled.span`
+  font-family: 'Roboto', sans-serif;
+  color: #1b9bea;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: -0.1rem;
+  font-weight: bold;
+`;
 
 export const StyledP = styled.p`
   margin: 0;
@@ -127,6 +142,7 @@ export const Div2 = styled.div`
 `;
 
 // Menu styling
+
 export const MenuDiv = styled.div`
   display: flex;
   align-items: center;

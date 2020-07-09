@@ -64,7 +64,6 @@ const PresCandidates = (props) => {
         console.log(err);
       });
   }, [props.count]);
-  // console.log('tweet from pres', tweet);
   return (
     <div>
       <ChoiceDiv className='pres'>
