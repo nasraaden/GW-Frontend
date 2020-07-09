@@ -1,4 +1,4 @@
-import React, { useReducer, useState, useEffect } from 'react';
+import React, { useReducer } from 'react';
 import {
   Form,
   Input,
@@ -9,9 +9,6 @@ import {
   StyledDiv2,
   H2,
   P,
-  Span1,
-  Span2,
-  Div2,
 } from '../styles/Styles';
 import * as yup from 'yup';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
@@ -44,7 +41,6 @@ function loginReducer(state, action) {
 }
 
 function Login(props) {
-  const [score, setScore] = useState();
   const { register, handleSubmit, errors } = useForm({
     validationSchema: validationSchema,
   });
@@ -53,8 +49,7 @@ function Login(props) {
   const onSubmit = (data) => {
     console.log("Data from Login'n onSubmit", data);
     dispatch((state.email = data.email), (state.password = data.password));
-    // console.log('state', state, 'data', data);
-    // e.preventDefault();
+
     axiosWithAuth()
       .post('/api/login', state)
       .then((res) => {
