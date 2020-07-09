@@ -53,8 +53,7 @@ function Login(props) {
   const onSubmit = (data) => {
     console.log("Data from Login'n onSubmit", data);
     dispatch((state.email = data.email), (state.password = data.password));
-    // console.log('state', state, 'data', data);
-    // e.preventDefault();
+
     axiosWithAuth()
       .post('/api/login', state)
       .then((res) => {

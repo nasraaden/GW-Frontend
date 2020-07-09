@@ -74,7 +74,7 @@ const HomePage = (props) => {
       </div>
 
       <NavLink to='/game'>
-        <PlayButton>Play!</PlayButton>
+        <PlayButton>Play</PlayButton>
       </NavLink>
     </div>
   );

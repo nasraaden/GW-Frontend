@@ -11,7 +11,7 @@ export const AppDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
+  //   height: 100vh;
   max-width: 100vw;
 `;
 
@@ -86,6 +86,7 @@ export const P = styled.p`
 export const Span1 = styled.span`
   font-family: 'Londrina Outline', cursive;
   color: white;
+  font-weight: bold;
   font-size: 2rem;
   margin-right: 1px;
   text-align: center;
@@ -284,14 +285,15 @@ export const ScoreP = styled.p`
   font-size: 2rem;
 `;
 export const StyledTweet = styled.p`
-  position: relative;
-  top: 0%;
-  color: white;
+  //   position: relative;
   text-align: left;
-  margin: 1em;
-  box-shadow: 5px 5px rgba(0, 0, 0, 25%);
+  margin: 1rem;
+  background: white;
   border: 2px solid white;
+  border-radius: 0.5rem;
   padding: 2%;
+  width: 20rem;
+  margin: auto;
 `;
 export const TweetDiv = styled.div`
   display: flex;
@@ -314,12 +316,13 @@ export const LevelP = styled.p`
   margin-left: 0%;
 `;
 export const InfoDiv = styled.div`
-  position: absolute;
-  top: 10%;
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  height: 10%;
+  //   height: 10rem;
+  border: 2px solid red;
+  color: black;
+  margin-top: 28%;
 `;
 export const GameDiv = styled.div`
   display: flex;
@@ -328,8 +331,8 @@ export const GameDiv = styled.div`
   width: 100%;
 `;
 export const PresCandImg = styled.img`
-  height: 30px;
-  width: 30px;
+  height: 3.5rem;
+  width: 3.5rem;
   border-radius: 50px;
 `;
 //Setting Styles
