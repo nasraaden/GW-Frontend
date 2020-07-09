@@ -49,7 +49,6 @@ const validationSchema = yup.object().shape({
 const initialState = {
   email: '',
   password: '',
-  // confirmPassword: ''
 };
 
 function loginReducer(state, action) {
@@ -62,16 +61,12 @@ export default function SignUp(props) {
   });
   const [state, dispatch] = useReducer(loginReducer, initialState);
 
-  // email: 1234@gmail.com    password: 1234
   const onSubmit = (data) => {
     dispatch((state.email = data.email), (state.password = data.password));
-    console.log('state', state, 'data', data);
-    // e.preventDefault();
+
     axiosWithAuth()
       .post('/api/register', state)
       .then((res) => {
-        console.log('res from signup', res);
-        console.log('TOKEN:', res.data.token);
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('id', res.data.id);
         props.history.push('/home-page');

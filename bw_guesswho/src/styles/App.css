@@ -50,3 +50,100 @@ body {
   text-decoration: none;
   color: #1b9bea;
 }
+
+.home-link {
+  font-size: 1.2rem;
+  margin: 1rem;
+  text-decoration: none;
+  color: #1b9bea;
+}
+
+.home-link:hover {
+  border-bottom: 2px solid #1b9bea;
+}
+
+.landing {
+  background: white;
+  width: 100vw;
+}
+
+.landing-top-container {
+  display: flex;
+  align-items: center;
+}
+.landing-top-container .left {
+  padding: 2rem;
+  width: 45%;
+}
+
+.landing-top-container .left h2 {
+  font-size: 3.5rem;
+  font-weight: normal;
+  color: #1b9bea;
+  line-height: 4.675rem;
+  text-align: left;
+  margin: 1rem;
+}
+
+.landing-top-container .left h4 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #1b9bea;
+  text-align: left;
+  margin: 1rem;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.buttons .play-button {
+  background: #1b9bea;
+  color: white;
+  border-radius: 0.5rem;
+  width: 8rem;
+  height: 3.1rem;
+  font-size: 1.6rem;
+  margin-right: 0.8rem;
+}
+
+.buttons .app-store {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1b9bea;
+  border-radius: 0.5rem;
+  padding: 0.2rem;
+}
+
+.buttons .app-store .download {
+  font-size: 0.7rem;
+  margin: 0;
+  padding: 0;
+  text-align: start;
+  padding: 0.2rem 0 0rem 0;
+  color: #1b9bea;
+}
+
+.buttons .app-store .apple {
+  font-size: 1.2rem;
+  margin: 0rem;
+  padding: 0;
+  text-align: start;
+  padding: 0 0rem 0 0;
+  color: #1b9bea;
+}
+
+.buttons .app-store .apple-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: #1b9bea;
+}
+
+.landing-top-container .right img {
+  width: 35rem;
+  height: 30rem;
+  padding: 0;
+}
