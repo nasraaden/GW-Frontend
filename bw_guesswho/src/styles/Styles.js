@@ -19,7 +19,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid red;
+  margin-top: 5rem;
 `;
 export const Input = styled.input`
   width: 28rem;
