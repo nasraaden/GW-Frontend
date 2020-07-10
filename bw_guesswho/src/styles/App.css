@@ -112,6 +112,13 @@ body {
   height: 3.1rem;
   font-size: 1.6rem;
   margin-right: 0.8rem;
+  cursor: pointer;
+}
+
+.buttons .play-button:hover {
+  border: 2px solid #1b9bea;
+  background: white;
+  color: #1b9bea;
 }
 
 .buttons .app-store {
