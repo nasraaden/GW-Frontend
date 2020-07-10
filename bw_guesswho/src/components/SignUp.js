@@ -79,7 +79,7 @@ export default function SignUp(props) {
       <H2>Welcome to Guess Who!</H2>
       <StyledDiv>
         <Span3 className='backButton'>
-          <NavLink to='/'>{`<`}</NavLink>
+          <NavLink to='/login' className='link-span'>{`<`}</NavLink>
         </Span3>
         <H2>Create your account</H2>
         <StyledDiv2>
@@ -99,7 +99,10 @@ export default function SignUp(props) {
           Sign Up
         </Button>
         <P>
-          Already have an account? <NavLink to='/login'>Log In</NavLink>
+          Already have an account?{' '}
+          <NavLink to='/login' className='link-span'>
+            Log In
+          </NavLink>
         </P>
       </StyledDiv>
     </Form>

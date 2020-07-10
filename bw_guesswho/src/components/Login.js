@@ -85,7 +85,9 @@ function Login(props) {
         <Button type='submit'>Sign In</Button>
         <P>
           Don't have an account?{' '}
-          <NavLink to='/create-account'>Create Account</NavLink>{' '}
+          <NavLink to='/create-account' className='link-span'>
+            Create Account
+          </NavLink>
         </P>
       </StyledDiv>
     </Form>
