@@ -16,7 +16,6 @@ import { IoIosPeople } from 'react-icons/io';
 // images
 import iphone from './images/iphone.png';
 import score from './images/score.png';
-import friends from './images/friends.png';
 
 const Landing = () => {
   return (
@@ -102,7 +101,7 @@ const Landing = () => {
                   src={
                     'https://pbs.twimg.com/profile_images/1097820307388334080/9ddg5F6v_400x400.png'
                   }
-                  alt='image of bernie sanders at a podium'
+                  alt='bernie sanders at a podium with the flag behind him'
                 />
                 <div className='user-text'>
                   <div className='name-check'>
@@ -117,7 +116,7 @@ const Landing = () => {
                   src={
                     'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-1/17903454_10158949965035725_3181251005684687258_n.jpg?_nc_cat=1&_nc_sid=dbb9e7&_nc_oc=AQkbPTt2-cSfrQMWDXPOVw2Ef_XuMycjc0D1GK7RzWQyv6TWKQ_JsYcdierR9K7Y_bgksQsn_bW2x2_1npaX8-Kd&_nc_ht=scontent-sea1-1.xx&oh=3a4b5a3d2b93eddd64063e03ad8d3f27&oe=5F2DCD43'
                   }
-                  alt='picture of Donald Trump with a blurry pictures'
+                  alt='close up Donald Trump with a blurry background'
                 />
                 <div className='user-text'>
                   <div className='name-check'>
@@ -132,7 +131,7 @@ const Landing = () => {
                   src={
                     'https://scontent-sea1-1.xx.fbcdn.net/v/t1.0-9/85009296_10156636790376104_3772302117180538880_o.jpg?_nc_cat=1&_nc_sid=85a577&_nc_oc=AQmtkEqImJrUcQaAC8MWpfXiIeUozaxrm4hzmJXBLIKRccP_9xrJMPTFQBf9e2Pb0F54D_AMOzbj15Y7wgt7NmpB&_nc_ht=scontent-sea1-1.xx&oh=0862fa40ddb9b6236d03eae8fcd5977e&oe=5F2B573D'
                   }
-                  alt='picture of Joe Biden with a light blue background'
+                  alt='Joe Biden with a light blue background'
                 />
                 <div className='user-text'>
                   <div className='name-check'>
